@@ -44,8 +44,9 @@ jobs:
           git add */**/README.md
           git commit -m 'Automated documentation update [skip ci]' || export NO_UPDATES=true
 
-          # Push
+          # Push (force: a re-run of this workflow reuses the same branch name,
+          # and the generated docs commit differs from the previous attempt)
           if [ "$NO_UPDATES" != "true" ] ; then
-              git push origin "$branch"
+              git push --force origin "$branch"
               gh pr create --title "$message" --body "$message"
           fi
