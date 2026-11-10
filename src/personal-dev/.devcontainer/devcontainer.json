@@ -5,6 +5,7 @@
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
+	"shutdownAction": "none",
 
 	"features": {
 		"ghcr.io/devcontainers/features/node:2": {
