@@ -1,6 +1,6 @@
 {
     "id": "personal-dev",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Personal Dev",
     "description": "Host-isolated personal dev environment: git, GitHub CLI, Node LTS (+ npm), opencode, zsh",
     "documentationURL": "https://github.com/huybui38/dev-container-template/tree/main/src/personal-dev",
