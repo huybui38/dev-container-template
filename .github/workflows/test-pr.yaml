@@ -12,8 +12,7 @@ jobs:
         id: filter
         with:
           filters: |
-            color: ./**/color/**
-            hello: ./**/hello/**
+            personal-dev: ./**/personal-dev/**
 
   test:
     needs: [detect-changes]

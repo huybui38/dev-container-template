@@ -1,0 +1,35 @@
+{
+    "id": "personal-dev",
+    "version": "1.0.0",
+    "name": "Personal Dev",
+    "description": "Host-isolated personal dev environment: git, GitHub CLI, Node LTS (+ npm), opencode, zsh",
+    "documentationURL": "https://github.com/huybui38/dev-container-template/tree/main/src/personal-dev",
+    "licenseURL": "https://github.com/huybui38/dev-container-template/blob/main/LICENSE",
+    "options": {
+        "imageVariant": {
+            "type": "string",
+            "description": "Base image variant (all multi-arch, run natively on Apple Silicon):",
+            "proposals": [
+                "ubuntu-24.04",
+                "ubuntu-22.04",
+                "debian-12"
+            ],
+            "default": "ubuntu-24.04"
+        },
+        "nodeVersion": {
+            "type": "string",
+            "description": "Node.js version (npm and npx are included):",
+            "proposals": [
+                "lts",
+                "latest",
+                "24",
+                "22",
+                "20"
+            ],
+            "default": "lts"
+        }
+    },
+    "platforms": [
+        "Any"
+    ]
+}

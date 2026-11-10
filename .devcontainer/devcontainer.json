@@ -1,14 +1,17 @@
+// Dev container for maintaining this template collection.
 // More info: https://containers.dev/implementors/json_reference/
 {
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-18-bullseye",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
 	"features": {
+		"ghcr.io/devcontainers/features/node:2": {
+			"version": "lts"
+		},
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"mads-hartmann.bash-ide-vscode",
-				"dbaeumer.vscode-eslint"
+				"mads-hartmann.bash-ide-vscode"
 			]
 		}
 	},

@@ -1,0 +1,40 @@
+// Personal, host-isolated dev environment.
+// More info: https://containers.dev/implementors/json_reference/
+{
+	"name": "Personal Dev",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+
+	"features": {
+		"ghcr.io/devcontainers/features/node:2": {
+			"version": "${templateOption:nodeVersion}"
+		},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+
+	// opencode is installed on first create so it stays current.
+	"postCreateCommand": "npm install -g @opencode/cli@latest",
+
+	// Host isolation: only the project folder is mounted, at a fixed path.
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+	// Host isolation: no extra mounts (no ~/.ssh, ~/.gitconfig, host Docker socket).
+	"mounts": [],
+
+	// Host isolation: run as the built-in non-root user.
+	"remoteUser": "vscode",
+	"containerUser": "vscode",
+
+	// Host isolation: no ports are forwarded unless listed here.
+	"forwardPorts": [],
+
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh"
+			}
+		}
+	}
+}
